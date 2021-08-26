@@ -24,7 +24,7 @@ public class VisitList extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try {
 			out.println("<html>");
-			out.println("<head><title>¹æ¸í·Ï ¸®½ºÆ®</title></head>");
+			out.println("<head><title>ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸</title></head>");
 			out.println("<body>");
 			StringBuffer sql = new StringBuffer();
 			sql.append("select vno, writer,memo, regdate ");
@@ -50,15 +50,15 @@ public class VisitList extends HttpServlet {
 					
 					out.println("<table align=center width=500 border=1>");
 					out.println("<tr>");
-					out.println("<th width=50>¹øÈ£</th>");
+					out.println("<th width=50>ë²ˆí˜¸</th>");
 					out.println("<td width=50 align=center>"+vno+"</td>");
-					out.println("<th width=70>ÀÛ¼ºÀÚ</th>");
+					out.println("<th width=70>ê¸€ì“´ì´</th>");
 					out.println("<td width=180 align=center>"+writer+"</td>");
-					out.println("<th width=50 align=center>³¯Â¥</th>");
+					out.println("<th width=50 align=center>ë‚ ì§œ</th>");
 					out.println("<td width=100 align=center>"+regdate+"</td>");
 					out.println("</tr>");
 					out.println("<tr>");
-					out.println("<th width=50>³»¿ë</th>");
+					out.println("<th width=50>ë‚´ìš©</th>");
 					out.println("<td colspan=5>&nbsp;<textarea rows=3 cols=50>"
 									+memo+"</textarea></td>");
 					out.println("</tr>");
@@ -72,7 +72,7 @@ public class VisitList extends HttpServlet {
 				try {if(pstmt!=null)pstmt.close();} catch (SQLException e) {}
 				try {if(con!=null)con.close();} catch (SQLException e) {}
 			}
-			out.println("<p align=center><a href=/myWeb/bbs/write.html>±Û¾²±â</a></p>");
+			out.println("<p align=center><a href=/myWeb/bbs/write.html>ê¸€ì“°ê¸°</a></p>");
 			out.println("</body>");
 			out.println("</html>");
 			

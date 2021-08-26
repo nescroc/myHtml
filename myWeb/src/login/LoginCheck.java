@@ -1,6 +1,11 @@
 package login;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,22 +19,49 @@ public class LoginCheck extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
+
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
-		System.out.println(id +" "+pwd);
-		//db¿¡¼­ »ç¿ëÀÚ Á¤º¸ Á¶È¸... ÀÌºÎºĞÀÇ ÄÚµùÀ» ¼öÁ¤ÇØ¼­ ¸¸µé¾î º¼°Í
-		//db¿¡¼­ Á¶È¸ÇÑ »ç¿ëÀÚÀÇ ¾ÆÀÌµğ ºñ¹øÀÌ ÀÏÄ¡ÇÏ´Â °æ¿ì
-		//Å¬¶óÀÌ¾ğÆ®ÀÇ Á¤º¸¸¦ HttpSession°´Ã¼¿¡ À¯Áö ½ÃÅ²´Ù
-		String dbId = "admin";
-		String dbPWD = "1234";
-		if (dbId.equals(id)&&dbPWD.equals(pwd)) {
-			//HttpSession°´Ã¼ ¾ò±â
-			HttpSession session = request.getSession();
-			//Å¬¶óÀÌ¾ğÆ®ÀÇ Á¤º¸¸¦ HttpSession °´Ã¼¿¡ ÀúÀå
-			session.setAttribute("user", id);
+		
+		System.out.println(id);
+		System.out.println(pwd);
+		
+		String dbPWD = "";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1", "mytest", "mytest");
+			pstmt = con.prepareStatement("select pass from login where id = ?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				System.out.println(2);
+				dbPWD = rs.getString("pass");
+				if (pwd.equals(dbPWD)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("user", id);					
+				}else {
+					System.err.println("ì˜ëª»ëœ ë¹„ë°€ë²ˆí˜¸ ì…ë‹ˆë‹¤.");
+				}
+			}else {
+				System.err.println("ì˜ëª»ëœ ì•„ì´ë””ì…ë‹ˆë‹¤.");				
+			}
+		} catch (ClassNotFoundException clfe) {
+			clfe.printStackTrace();
+		}catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}finally {
+			try {if(rs!=null)rs.close();}catch(SQLException sqle) {}
+			try {if(pstmt!=null)pstmt.close();}catch(SQLException sqle) {}
+			try {if(con!=null)con.close();}catch(SQLException sqle) {}
 		}
-		response.sendRedirect("Login");		
+		response.sendRedirect("Login");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,6 +72,10 @@ public class LoginCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
+	}
+
+	protected void idCheck(String id) throws Exception {
+
 	}
 
 }
