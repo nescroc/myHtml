@@ -4,13 +4,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <title>Document</title>
+ <title>JSP File</title>
  </head>
  <body>
-<h2 align="center">My first jsp file</h2>
-<br><hr color="red"><br>
-<p align="center">
-  지금은 <%= new java.util.Date()%> 입니다.
-</p>
+<h2>JSP Script 예제</h2>
+	<% //Scriplet - 연산,처리 
+		String scriplet = "스크립트릿 입니다.";
+		String comment ="주석문 입니다"; 
+		out.println("내장객체를 이용한 출력 : "+declation+"<br></br>");%>
+		
+	선언문 출력하기(변수) 	: <%=declation %><br></br>
+	선언문 출력하기(메소드)	: <%=declationMethod() %><br></br>
+	스크립트릿 출력하기		: <%=scriplet %><br></br>
+	<!-- JSP에서 사용하는 HTML 주석부분 -->
+	<!-- HTML 주석 : <%=comment%> --><br></br>
+	<%-- JSP 주석 : <%=comment%> 가장 강력하다 --%>
+	<%
+		/* 
+		
+		자바주석은 보이진 않지만 흔적은 남는다 
+		
+		*/ %>
+		
+	<%!// declation = 변수 선언 
+		String declation = "선언문 입니다.";
+		%>
+		
+	<%!	//declation = 메서드 선언
+		public String declationMethod(){
+			return declation;
+		}%>
  </body>
 </html>
