@@ -6,11 +6,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
 
-public class TempMemberDAO {
-	private ConnectionPool pool = null;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
+public class TempMemberDAO {
+	//private ConnectionPool pool = null;
+	
 	public TempMemberDAO() {
-		pool = ConnectionPool.getInstance();
+		//pool = ConnectionPool.getInstance();
 	}
 
 	public Vector<TempMemberVO> getMemberList() {
@@ -20,7 +24,9 @@ public class TempMemberDAO {
 
 		Vector<TempMemberVO> vecList = new Vector<TempMemberVO>();
 		try {
-			conn = pool.getConnection();
+			Context init = new InitialContext();
+			DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/myOracle");
+			conn = ds.getConnection();
 			String strQuery = "select * from tempMember";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(strQuery);
@@ -54,7 +60,7 @@ public class TempMemberDAO {
 				}
 			if (conn != null)
 				try {
-					pool.releasedConnection(conn);
+				conn.close();
 				} catch (SQLException sqle) {
 				}
 		}
