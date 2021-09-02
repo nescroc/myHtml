@@ -31,8 +31,8 @@ function sendAddress(zipcode,sido,gugun,dong,ri,bunji){
 	opener.document.regForm.zipcode.value=zipcode;
 	opener.document.regForm.address1.value=address;
 	self.close();
-}
-
+}  
+/**/
 function inputCheck(){
 	if(document.regForm.id.value==""){
 		alert("아이디를 입력해 주세요.");
