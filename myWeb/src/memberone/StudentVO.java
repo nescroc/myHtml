@@ -18,6 +18,12 @@ public class StudentVO {
 	public void setId(String id) {
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "StudentVO [id=" + id + ", pass=" + pass + ", name=" + name + ", phone1=" + phone1 + ", phone2=" + phone2
+				+ ", phone3=" + phone3 + ", email=" + email + ", zipcode=" + zipcode + ", address1=" + address1
+				+ ", address2=" + address2 + "]";
+	}
 	public String getPass() {
 		return pass;
 	}

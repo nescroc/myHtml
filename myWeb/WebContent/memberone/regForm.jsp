@@ -66,7 +66,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="button" value="회원가입" onclick="#"/>&nbsp;&nbsp;
+				<input type="button" value="회원가입" onclick="inputCheck()"/>&nbsp;&nbsp;
 				<input type="reset" value="초기화"/>
 			</td>
 		</tr>

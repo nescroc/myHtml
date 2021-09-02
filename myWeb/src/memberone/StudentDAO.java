@@ -15,6 +15,18 @@ import jdbc.TempMemberVO;
 
 public class StudentDAO {
 
+	private StudentDAO(){};
+	private static StudentDAO instance;
+	public static StudentDAO getInstance() {
+		if(instance==null) {
+			synchronized (StudentDAO.class) {
+				instance = new StudentDAO();
+			}	
+		}
+		return instance;
+	}
+	
+	
 	private Connection getConnection() {
 		Connection conn = null;
 		try {
@@ -130,6 +142,7 @@ public class StudentDAO {
 	}
 
 	public boolean memberInsert(StudentVO vo) {
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -138,11 +151,149 @@ public class StudentDAO {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(strQuery);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPass());
+			pstmt.setString(3, vo.getName());
+			pstmt.setString(4, vo.getPhone1());
+			pstmt.setString(5, vo.getPhone2());
+			pstmt.setString(6, vo.getPhone3());
+			pstmt.setString(7, vo.getEmail());
+			pstmt.setString(8, vo.getZipcode());
+			pstmt.setString(9, vo.getAddress1());
+			pstmt.setString(10, vo.getAddress2());
+			int count = pstmt.executeUpdate();
+			if (count>0)flag=true;			
 		}catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			if(rs!=null)try {rs.close();}catch (SQLException sqle) {}
+			if(pstmt!=null)try {pstmt.close();}catch (SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch (SQLException sqle) {}
+		}
+		return flag;
+	}
+
+	public int loginCheck(String id, String pass) {
+
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int check = -1;
+		try {
+			conn= getConnection();
+			String strQuery = "select pass from student where id = ?";
+			pstmt = conn.prepareStatement(strQuery);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				
+				String dbPass = rs.getString("pass");
+				
+				if (pass.equals(dbPass)) check=1;
+				else check = 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(rs!=null)try {rs.close();}catch (SQLException sqle) {}
+			if(pstmt!=null)try {pstmt.close();}catch (SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch (SQLException sqle) {}
+	
 		}
 		
-		
-		return true;
+		return check;
 	}
+
+	public void updateMember(StudentVO vo) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String strQuery = "update student set "
+				+ "pass=?,phone1=?,phone2=?,phone3=?,email=?,zipcode=?,address1=?,address2=? where id=?";
+		try {
+			conn = getConnection();			
+			pstmt = conn.prepareStatement(strQuery);
+			pstmt.setString(1, vo.getPass());
+			pstmt.setString(2, vo.getPhone1());
+			pstmt.setString(3, vo.getPhone2());
+			pstmt.setString(4, vo.getPhone3());
+			pstmt.setString(5, vo.getEmail());
+			pstmt.setString(6, vo.getZipcode());
+			pstmt.setString(7, vo.getAddress1());
+			pstmt.setString(8, vo.getAddress2());
+			pstmt.setString(9, vo.getId());
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt!=null)try {pstmt.close();}catch (SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch (SQLException sqle) {}
+		}
+		
+	}
+
+	public StudentVO getMember(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StudentVO vo = null;
+		String strQuery = "select * from student where id = ?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(strQuery);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				//해당 아이디에 대한 회원이 존재
+				vo = new StudentVO();
+				vo.setId(rs.getString("id"));
+				vo.setPass(rs.getString("pass"));
+				vo.setName(rs.getString("name"));
+				vo.setPhone1(rs.getString("phone1"));
+				vo.setPhone2(rs.getString("phone2"));
+				vo.setPhone3(rs.getString("phone3"));
+				vo.setEmail(rs.getString("email"));
+				vo.setZipcode(rs.getString("zipcode"));
+				vo.setAddress1(rs.getString("address1"));
+				vo.setAddress2(rs.getString("address2"));
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt!=null)try {pstmt.close();}catch (SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch (SQLException sqle) {}
+		}
+		return vo;
+	}
+	
+	public int deleteMember(String id, String pass) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;		
+		int result = -1;
+		String strQuery = "delete from student where id = ?";
+		int isPassOk = loginCheck(id, pass);
+		
+		try {
+			if (isPassOk==1) {
+				//성공
+				conn = getConnection();
+				pstmt = conn.prepareStatement(strQuery);
+				pstmt.setString(1, id);
+				pstmt.executeUpdate();
+				result = 1;				
+			}else {
+				//본인확인실패
+				result = 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt!=null)try {pstmt.close();}catch (SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch (SQLException sqle) {}	
+		}
+		
+		return result;
+	}
+	
 }

@@ -2,9 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="memberone.*" %>
-    <!-- 1 -->
-<jsp:useBean id="dao" class="memberone.StudentDAO"/>
-<%
+<%	
+	StudentDAO dao = StudentDAO.getInstance();
 	request.setCharacterEncoding("utf-8");
 	String check = request.getParameter("check");
 	String dong = request.getParameter("dong");
