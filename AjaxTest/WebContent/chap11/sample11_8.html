@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.slideUp() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "button" ).click(function() {
+		  $( this).parent().slideUp( "slow", function() {
+		    $( "#msg" ).text( $( this ).text() + " 완료됨." );
+		  });
+	});
+});
+</script>
+</head>
+<body>
+<div>
+  <button>Hide One</button>
+  <input type="text" value="One">
+</div> 
+<div>
+  <button>Hide Two</button>
+  <input type="text" value="Two">
+</div>
+<div>
+  <button>Hide Three</button>
+  <input type="text" value="Three">
+</div>
+<div id="msg"></div>
+</body>
+</html>

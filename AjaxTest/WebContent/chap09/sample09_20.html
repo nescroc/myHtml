@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$(selector).get(index) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   console.log("li의 첫 번째 요소: " +  $("li").get(0).innerHTML);
+	   console.log("li의 마지막 요소: " +  $("li").get(-1).innerHTML);
+	   var all = $("li").get();
+	   for( var i = 0 ; i < all.length; i++){
+	      console.log("li의 모든 요소: " + all[i].innerHTML);
+	   }
+   });
+</script>
+</head>
+<body>
+<ul>
+  <li>홍길동</li>
+  <li>이순신</li>
+  <li>유관순</li>
+</ul>
+</body>
+</html>

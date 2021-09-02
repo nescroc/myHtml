@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getElementById 메서드 조회</title>
+
+</head>
+<body>
+  <h1 id="header1">헤더입니다.</h1>
+  <p id="p1">p1입니다.</p>
+  <p id="p2">p2입니다.</p>
+  
+  <script type="text/javascript">
+
+     var h1 = document.getElementById("header1");
+     var p1 = document.getElementById("p1");
+     var p2 = document.getElementById("p2");
+     
+     console.log(h1.innerHTML +"\t" + p1.innerHTML +"\t" + p2.firstChild.nodeValue );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.on() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#create").on("click",function(){
+		$("div").html("<button id='newButton'>ok</button>");
+     });
+     
+	// 미래에 동적으로 추가된 요소에 이벤트 처리
+	$("body").on("click","#newButton" , function(event){
+		console.log("click");
+	});
+});
+</script>
+</head>
+<body>
+<button id="create">new</button>
+<div>
+</div>
+</body>
+</html>

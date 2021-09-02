@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.fadeToggle() 메서드</title>
+ <style>
+  span {
+    color: red;
+    cursor: pointer;
+  }
+  div {
+    margin: 3px;
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+  #one {
+    background: #f00;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "span" ).click(function() {
+		   $( "div" ).fadeToggle( "slow" );
+	});
+});
+</script>
+</head>
+<body>
+<span>Click here...</span>
+<div id="one"></div>
+</body>
+</html>

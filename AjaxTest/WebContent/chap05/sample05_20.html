@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:first 및 :last Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "tr:first" ).css( "background-color", "#bbf" ); 
+	   $( "tr:last" ).css( "font-style", "italic"); 
+   });
+</script>
+</head>
+<body>
+ <table border="1">
+  <tr><td>인덱스 0</td></tr>
+  <tr><td>인덱스 1</td></tr>
+  <tr><td>인덱스 2</td></tr>
+  <tr><td>인덱스 3</td></tr>
+</table>
+</body>
+</html>

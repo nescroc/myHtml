@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$("tag1, tag2") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	     $("div, span, p.myClass").css("color","red");
+   });
+</script>
+</head>
+<body>
+<div>div</div>
+<p class="myClass">p class="myClass"</p>
+<p class="notMyClass">p class="notMyClass"</p>
+<span>span</span>
+</body>
+</html>

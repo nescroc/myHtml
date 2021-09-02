@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.parents([selector]) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "p" ).parents().each(function(){
+		  console.log(this.tagName); 
+	   });
+   });
+
+</script>
+</head>
+<body>
+  <div>
+   <p>홍길동</p>
+  </div>
+</body>
+</html>

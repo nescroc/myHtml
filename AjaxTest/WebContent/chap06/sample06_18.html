@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.nextAll([selector]) Traverse 메서드</title>
+<style>
+  div {
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    margin: 10px;
+    float: left;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "div:first" ).nextAll().css("background","green");
+	   $( "div:first" ).nextAll(".selected").css( "font-size", "30px" );
+   });
+
+</script>
+</head>
+<body>
+<div>홍길동</div>
+<div>이순신<div>유관순</div></div>
+<div class="selected">강감찬</div>
+<div class="selected">이성계</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.parent([selector]) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "p" ).parent().css( "font-size", "30px" );
+	   $( "p" ).parent( ".selected" ).css( "background", "yellow" );
+   });
+
+</script>
+</head>
+<body>
+<div><p>홍길동</p></div>
+<div class="selected"><p>이순신</p></div>
+</body>
+</html>

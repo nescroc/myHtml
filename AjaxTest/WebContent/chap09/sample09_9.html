@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.trim(str) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   var str = "         Ajax와 jQuery 프레임워크         ";
+	   $( "#original" ).html( "Original String: '" + str + "'" );
+	   $( "#trimmed" ).html( "$.trim()' : '" + jQuery.trim(str) + "'" );
+
+   });
+</script>
+</head>
+<body>
+<pre id="original"></pre>
+<pre id="trimmed"></pre>
+</body>
+</html>

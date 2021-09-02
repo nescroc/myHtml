@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cross Domain 실습</title>
+
+<script type="text/javascript">
+
+	var xhttp;
+	function createHttpRequest() {
+			xhttp = new XMLHttpRequest();
+	}
+  
+	function mySend() {
+
+		createHttpRequest();
+		xhttp.onreadystatechange = callFunction;
+		xhttp.open("GET", "http://localhost:9000/AjaxTest/chap03/cross.jsp", true);
+		xhttp.send(null);
+	}
+	function callFunction() {
+		if (xhttp.readyState == 4) {
+			if (xhttp.status == 200) {
+				var responseData = xhttp.responseText;
+				document.getElementById("result").innerHTML = responseData;
+			}
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+	CORS 파일 실습입니다.
+	<br>
+	<button onclick="mySend()">CROSS 파일 수신</button>
+	<div id="result"></div>
+</body>
+</html>

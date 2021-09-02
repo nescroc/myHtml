@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.unbind() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	    var handler =  function(event) {
+		   console.log("hello");
+		};
+	    $('#foo').bind('click', handler);
+	    $('#foo').unbind("click",handler);
+	    
+	    $('#foo2').bind('click', function(event) {
+		   console.log("hello2");
+		});
+	    $('#foo2').unbind("click",function(event) {
+		   console.log("hello2");
+		});
+});
+</script>
+</head>
+<body>
+<button id="foo">press</button>
+<button id="foo2">press2</button>
+</body>
+</html>

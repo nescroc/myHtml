@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.getJSON() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#html").on( "click" , function(){
+		 var mesg = "";
+		var jqxhr = $.getJSON("test.json",function(data){
+			  console.log("success");
+			  mesg += data.one +"<br>";
+			  mesg += data.two +"<br>";
+			  mesg += data.three +"<br>";
+             $("#result").html(mesg);
+		})
+		  .done(function() {
+			  console.log( "second success" );
+		  })
+		  .fail(function() {
+			  console.log( "error" );
+		  })
+		  .always(function() {
+			  console.log( "finished" );
+		  });
+	});
+});
+
+</script>
+</head>
+<body>
+<button id="html">요청</button>
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.isPlainObject(obj) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+
+	   var obj = { };
+	   var obj2 = new Object();
+	   var obj3 = 'hello';
+	   console.log("Is {} a PlainObject? " + jQuery.isPlainObject(obj) );
+	   console.log("Is new Object() a PlainObject? " + jQuery.isPlainObject(obj2) );
+	   console.log("Is 'hello' a PlainObject? " + jQuery.isPlainObject(obj3) );
+
+   });
+</script>
+</head>
+<body>
+</body>
+</html>

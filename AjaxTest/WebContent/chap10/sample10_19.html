@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.mouseenter() 메서드</title>
+<style>
+  div#inner{
+    border: 2px dotted blue;
+  }
+   div#outer{
+    border: 2px solid red;
+  }
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#outer').mouseenter(function() {
+			  $('#log').append('<div>mouseenter 이벤트 발생</div>');
+	    });
+
+	});
+</script>
+</head>
+<body>
+<div id="outer">
+  Outer
+  <div id="inner">
+    Inner
+  </div>
+</div>
+<div id="other">
+  mouseenter 이벤트
+</div>
+<div id="log"></div>
+</body>
+</html>

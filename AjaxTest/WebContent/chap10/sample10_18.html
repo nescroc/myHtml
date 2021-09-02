@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.dbclick() 메서드</title>
+<style>
+  div {
+    background: blue;
+    color: white;
+    height: 100px;
+    width: 150px;
+ }
+
+  div.dbl {
+    background: yellow;
+    color: black;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$( "div:first" ).dblclick(function() {
+			$( "div:first" ).toggleClass( "dbl" );
+		});
+	});
+</script>
+</head>
+<body>
+<div></div>
+<span>더블 클릭 영역</span>
+</body>
+</html>

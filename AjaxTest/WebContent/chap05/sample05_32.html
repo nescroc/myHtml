@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:contains(text) Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "div:contains('John')" ).css( "text-decoration", "underline" );
+   });
+</script>
+</head>
+<body>
+<div>John Resig</div>
+<div>George Martin , john</div>
+<div>Malcom John Sinclair</div>
+<div>J. Ohn</div>
+<div>
+  <span>Mr. John </span>
+</div>
+</body>
+</html>

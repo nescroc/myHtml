@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.trigger() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	    $( "#foo" ).on( "click", function() {
+		   console.log( $( this ).text() );
+		});
+	    
+		$( "#foo" ).trigger( "click" );
+
+});
+</script>
+</head>
+<body>
+<button id="foo">press</button>
+</body>
+</html>

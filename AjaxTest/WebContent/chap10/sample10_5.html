@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.one() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#pressMe").one("click",function(){
+		console.log("단 한번만 이벤트 실행");
+     });
+
+});
+</script>
+</head>
+<body>
+<button id="pressMe">Press Me</button>
+</body>
+</html>

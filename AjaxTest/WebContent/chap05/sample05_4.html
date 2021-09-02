@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$("#id") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	     $("#target").css("color","red");
+	     console.log("#target 값:" + $("#target").text() );
+   });
+</script>
+</head>
+<body>
+ <div>DIV1</div>
+ <div id="target">DIV2</div>
+ <span>SPAN</span>
+</body>
+</html>

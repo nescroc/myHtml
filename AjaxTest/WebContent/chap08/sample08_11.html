@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.before(content) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( ".inner" ).before( $("h2") );
+   });
+
+</script>
+</head>
+<body>
+<div class="container">
+  <h2>영웅들</h2>
+  <div class="inner">이순신</div>
+  <div class="inner">강감찬</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>검색 자동완성 실습</title>
+
+<script type="text/javascript">
+
+    var xhttp;
+    function createHttpRequest() {
+		  xhttp = new XMLHttpRequest();
+    }
+  
+	function mySend(check) {
+
+		createHttpRequest();
+		xhttp.onreadystatechange = callFunction;
+		var req = "suggest.jsp?search="+ check.value;
+		xhttp.open("GET", req, true);
+		xhttp.send(null);
+	}
+	function callFunction() {
+		if (xhttp.readyState == 4) {
+			if (xhttp.status == 200) {
+				var responseData = xhttp.responseText;
+				document.getElementById("result").innerHTML = responseData;
+			}
+		}
+	}
+	
+	
+</script>
+<style type="text/css">
+  span {
+     position: absolute;
+     top: 30px;
+     left: 50px;
+     width: 150px; 	
+     background-color: #C0C0C0;
+     border: 1px solid  #000000;
+     padding-left: 2px;
+     
+  }
+</style>
+</head>
+<body>
+  <form id="myForm">
+     검색어<input type="text" name="search" onkeyup="mySend(this)">
+  </form>
+  <div id="result"></div>
+</body>
+</html>

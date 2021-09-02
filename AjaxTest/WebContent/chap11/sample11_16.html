@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.dequeue() 메서드</title>
+<style>
+div {
+	background-color: #bca;
+	width: 100px;
+	border: 1px solid green;
+}
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   
+	$(document).ready(function() {
+		$("#go").on("click",function(){
+			$('#foo').slideUp();
+			$('#foo').queue(function() {
+				console.log('Animation first complete.');
+			  $(this).dequeue();
+			}).queue(function() {
+				console.log('Animation second complete.');
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="go">Run</button>
+	<div id="foo">Hello!</div>
+</body>
+</html>

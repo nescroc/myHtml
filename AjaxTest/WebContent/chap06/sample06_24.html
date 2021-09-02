@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.siblings([selector]) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "li.third-item" ).siblings().css( "background-color", "red" );
+	   $( "li.third-item" ).siblings(".selected").css( "font-size", "30px" );
+   });
+
+</script>
+</head>
+<body>
+<ul>
+  <li class="selected">아이템 1</li>
+  <li>아이템 2</li>
+  <li class="third-item">아이템 3</li>
+  <li>아이템 4</li>
+  <li class="selected">아이템 5</li>
+</ul>
+</body>
+</html>

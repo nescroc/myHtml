@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$(".class") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	     $(".myClass").css("color","red");
+	     console.log("첫 번째 .myClass 값:" + $(".myClass").first().text() );
+	     console.log("마지막 .myClass 값:" + $(".myClass").last().text() );
+   });
+</script>
+</head>
+<body>
+<div class="notMe">div class="notMe"</div>
+<div class="myClass">div class="myClass"</div>
+<span class="myClass">span class="myClass"</span>
+</body>
+</html>

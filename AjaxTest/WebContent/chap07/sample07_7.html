@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.removeClass(className) Traverse 메서드</title>
+<style>
+  .size {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .selected {
+    color: red;
+  }
+  .highlight {
+    background: yellow;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "p:first" ).removeClass( "highlight" );
+	   $( "p:last" ).removeClass( "selected highlight" );
+   });
+
+</script>
+</head>
+<body>
+<p class="size highlight">홍길동</p>
+<p>과</p>
+<p class="size selected highlight">이순신</p>
+</body>
+</html>

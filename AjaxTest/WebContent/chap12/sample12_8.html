@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.ajaxSetup() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#cal").on( "click" , function(){
+		
+		     $.ajaxSetup({
+			   url: "calc.jsp",
+			   type: "get",
+			   dataType: "text"
+			 });
+		
+		  $.ajax({
+				data: {
+					v1: $("#v1").val(),
+					v2: $("#v2").val()
+				},
+				success: function( responseData, status , xhr ){
+					
+					$("#result").text( responseData);
+				},
+			});
+	 });
+});
+
+</script>
+</head>
+<body>
+값1<input type="text" name="v1" id="v1"><br>
+값2<input type="text" name="v2" id="v2"><br>
+<button id="cal">계산</button>
+<div id="result"></div>
+</body>
+</html>

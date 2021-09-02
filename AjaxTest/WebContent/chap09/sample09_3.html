@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.grep() Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   var arr = [1,2,3,4,5,6,7,8,9 ];
+	   var arr2 = jQuery.grep( arr, function(obj, idx){
+		   return obj == 2;
+	   },false);
+	   console.log("inverter값이 false인경우: " + arr2.join(","));
+	   
+	   var arr3 = jQuery.grep( arr, function(obj, idx){
+		   return obj == 2;
+	   },true);
+	   console.log("inverter값이 true인경우: " + arr3.join(","));
+	   
+   });
+
+</script>
+</head>
+<body>
+</body>
+</html>

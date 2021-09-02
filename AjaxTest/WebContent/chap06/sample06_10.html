@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.add(selector) Traverse 메서드</title>
+<style>
+  div{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+  }
+  p{
+    clear: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+    margin: 0 10px;
+    padding: 2px;
+    width: 220px;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "div" ).css( "border", "2px solid red" )
+	   .add( "p" )
+	   .css( "background", "yellow" );
+   });
+
+</script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<p>Added this... </p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.parseXML(data) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+
+	   var xmlString = "<rss version='2.0'><person><name>홍길동</name><age>20</age></person></rss>";
+	   var xmlObject = jQuery.parseXML( xmlString );
+	   var $name = $(xmlObject).find( "name" );
+	   var $age = $(xmlObject).find( "age" );
+	   $( "#someElement" ).append( $name.text() +"\t"+  $age.text());
+
+   });
+</script>
+</head>
+<body>
+<p id="someElement"></p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$(".class.otherclass") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	     $(".myClass").css("border","2px solid blue");
+	     $(".myClass.otherClass").css("color","red");
+   });
+</script>
+</head>
+<body>
+<div class="myClass">div class="notMe"</div>
+<div class="myClass otherClass">div class="myClass"</div>
+<span class="myClass otherClass">span class="myClass"</span>
+</body>
+</html>

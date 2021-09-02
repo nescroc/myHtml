@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:nth-child(2n) Filter Selector</title>
+ <style>
+  div {
+    float: left;
+  }
+ </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "li:nth-child(2n)" ).css("background-color" , "green");
+	   $( "li:nth-child(2n+1)" ).css("font-size" , "30px");
+   });
+</script>
+</head>
+<body>
+<div>
+  <ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>D</li>
+    <li>E</li>
+    <li>F</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>가</li>
+    <li>나</li>
+    <li>다</li>
+    <li>라</li>
+    <li>마</li>
+    <li>바</li>
+  </ul>
+</div>
+</body>
+</html>

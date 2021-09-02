@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:gt 및 :lt Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "td:gt(4)" ).css( "backgroundColor", "yellow" );
+	   $( "td:gt(-2)" ).text( "gt(-2)" );
+   });
+</script>
+</head>
+<body>
+<table border="1">
+  <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+  <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+  <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+</table>
+</body>
+</html>

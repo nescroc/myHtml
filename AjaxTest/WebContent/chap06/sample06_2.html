@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.filter(expr) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "li" ).filter( ":even" ).css( "background-color", "green" )
+	   .end().filter( ".orange,#apple" ).css( "font-size", "30px" );
+	   //$( "li:even" ).css( "background-color", "red" );
+   });
+
+</script>
+</head>
+<body>
+<ul>
+  <li>아이템 1</li>
+  <li>아이템 2</li>
+  <li class="orange">아이템 3</li>
+  <li>아이템 4</li>
+  <li id="apple">아이템 5</li>
+  <li>아이템 6</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.is(expr) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "ul" ).click(function( event ) {
+		   var target = $( event.target );
+		   if ( target.is( "li" ) ) {
+		     target.css( "background-color", "green" );
+		     
+		     var isStrong = target.is(function(){
+				   return $("strong", this).length == 1;  // li내의 strong length
+			   });
+			   if(isStrong){
+				   target.css("font-size","30px");
+			   }	
+		   }
+		});
+   });
+
+</script>
+</head>
+<body>
+<ul>
+  <li>아이템 1</li>
+  <li>아이템 2</li>
+  <li>아이템 3</li>
+  <li>아이템<strong>4</strong></li>
+  <li>아이템 5</li>
+</ul>
+
+
+</body>
+</html>

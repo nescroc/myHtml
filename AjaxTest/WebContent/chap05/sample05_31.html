@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:selected Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+		$("select").change(function(){
+			var data = $(":selected").text();
+			$("span").text(data);
+		});
+   });
+</script>
+</head>
+<body>
+<form>
+<select name="phone">
+  <option>010</option>
+  <option selected="selected">011</option>
+  <option>02</option>
+</select>
+</form>
+선택된 값:<span></span>
+</body>
+</html>

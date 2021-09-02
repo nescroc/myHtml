@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>combo 박스 실습</title>
+<script type="text/javascript">
+
+	var xhttp;
+	function createHttpRequest() {
+			xhttp = new XMLHttpRequest();
+	}
+  
+	function mySend(check) {
+		createHttpRequest();
+		xhttp.onreadystatechange = callFunction;
+		var req = "address.jsp?address="+ check.value;
+		xhttp.open("GET", req, true);
+		xhttp.send(null);
+	}
+	function callFunction() {
+		if (xhttp.readyState == 4) {
+			if (xhttp.status == 200) {
+				var responseData = xhttp.responseText;
+				document.getElementById("result").innerHTML = responseData;
+			}
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+
+  <form>
+     <select name="address1" onchange="mySend(this)">
+       <option value="서울">서울</option>
+       <option value="경기">경기</option>
+       <option value="제주">제주</option>
+     </select> 
+     <select name="address2" id="result">
+        <option>구/동</option>
+     </select>
+  </form>
+
+</body>
+</html>

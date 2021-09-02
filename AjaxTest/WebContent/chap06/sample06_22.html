@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.prev([selector]) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "p" ).prev( ".selected" ).css( "font-size", "30px" );
+	   $( "p" ).prev().css( "background", "yellow" );
+   });
+
+</script>
+</head>
+<body>
+<div class="selected"><span>홍길동</span></div>
+<p class="selected">이순신</p>
+<p>유관순</p>
+<span class="selected">강감찬</span>
+<p>이성계</p>
+</body>
+</html>

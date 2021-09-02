@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.isNumeric(value) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+
+	   console.log("Is -100 a Numeric? " + jQuery.isNumeric("-100"));  
+	   console.log("Is 20 a Numeric? " + jQuery.isNumeric(20));     
+	   console.log("Is 0xFE a Numeric? " + jQuery.isNumeric(0xFE));   
+	   console.log("Is '0xFE' a Numeric? " + jQuery.isNumeric('0xFE')); 
+	   console.log("Is '8e5' a Numeric? " + jQuery.isNumeric('8e5'));  
+	   console.log("Is 3.14  a Numeric? " + jQuery.isNumeric(3.14)); 
+	   console.log("Is +10 a Numeric? " + jQuery.isNumeric(+10));    
+	   console.log("Is 0234 a Numeric? " + jQuery.isNumeric(0234));   
+	   console.log("Is '' a Numeric? " + jQuery.isNumeric(""));     
+	   console.log("Is {} a Numeric? " + jQuery.isNumeric({}));     
+	   console.log("Is NaN a Numeric? " + jQuery.isNumeric(NaN));   
+	   console.log("Is null a Numeric? " + jQuery.isNumeric(null));  
+	   console.log("Is true a Numeric? " + jQuery.isNumeric(true));   
+	   console.log("Is Infinity a Numeric? " + jQuery.isNumeric(Infinity)); 
+	   console.log("Is undefined a Numeric? " + jQuery.isNumeric(undefined)); 
+
+   });
+</script>
+</head>
+<body>
+</body>
+</html>

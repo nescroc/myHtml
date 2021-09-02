@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.has(selector) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "li" ).has( "ul" ).css( "background-color", "green" );
+   });
+
+</script>
+</head>
+<body>
+<ul>
+  <li>아이템 1</li>
+  <li>아이템 2
+    <ul>
+      <li>아이템 2-1</li>
+      <li>아이템 2-2</li>
+    </ul>
+  </li>
+  <li>아이템 3</li>
+  <li>아이템 4</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:not() Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "input:not(:checked) + span" ).css( "background-color", "green" );
+   });
+</script>
+</head>
+<body>
+<div>
+  <input type="checkbox" name="a">
+  <span>홍길동</span>
+</div>
+<div>
+  <input type="checkbox" name="b">
+  <span>이순신</span>
+</div>
+<div>
+  <input type="checkbox" name="c" checked="checked">
+  <span>유관순</span>
+</div>
+</body>
+</html>

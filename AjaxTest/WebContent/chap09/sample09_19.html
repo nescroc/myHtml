@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$(selector).each(function) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "li" ).each(function( index , element ) {
+		   console.log( index + ": " + $( this ).text() );
+		 });
+   });
+</script>
+</head>
+<body>
+<ul>
+  <li>홍길동</li>
+  <li>이순신</li>
+  <li>유관순</li>
+</ul>
+</body>
+</html>

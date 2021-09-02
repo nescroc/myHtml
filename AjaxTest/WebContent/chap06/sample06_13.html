@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.end() Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "ul" )
+	   .find( ".foo" )
+	     .css( "background-color", "red" )
+	   .end()
+	   .find( ".bar" )
+	     .css( "background-color", "green" );
+   });
+
+</script>
+</head>
+<body>
+<ul>
+  <li class="foo">아이템 1</li>
+  <li>아이템 2</li>
+  <li class="bar">아이템 3</li>
+</ul>
+</body>
+</html>

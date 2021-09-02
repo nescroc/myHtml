@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.focusin(),.focusout() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#parent").focusin(function(){
+	    console.log("parent focusin.");
+	});
+	$("input").focusin(function(){
+	    console.log("input focusin.");
+	});
+	$("#parent").focus(function(){
+	    console.log("parent focus.");
+	});
+	$("input").focus(function(){
+	    console.log("input focus.");
+	});
+
+});
+</script>
+</head>
+<body>
+<div id="parent">
+    <input type="text">
+</div>
+</body>
+</html>

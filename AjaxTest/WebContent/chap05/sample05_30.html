@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:checkbox , :checked Filter Selector</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   
+	  $("input:checkbox").wrap("<span></span>").parent().css("border" , " 3px dotted red");
+	  $(":text").val($("input:checked").val());
+   });
+</script>
+</head>
+<body>
+<form>
+  <fieldset>
+	 사과<input type="checkbox" checked="checked" value="사과"><br> 
+	 배<input type="checkbox" value="배"><br> 
+	 바나나<input type="checkbox" value="바나나"><br> 
+	 <input type="text">
+  </fieldset>
+</form>
+</body>
+</html>

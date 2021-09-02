@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.trigger() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	 $("button").on("click",function(event){
+		 $("[name=message]").trigger("myCustom"); 
+	  });
+	
+	  $("[name=message]").on("myCustom",function(event){
+		   $(this).val("메시지를 입력하세요"); 
+	  });
+	
+	  $("[name=message]").on("focus",function(event){
+		   $(this).val(""); 
+	  });
+});
+</script>
+</head>
+<body>
+<input type="text" name="message" id="message">
+<button>press</button>
+</body>
+</html>

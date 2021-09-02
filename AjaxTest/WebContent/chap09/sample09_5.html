@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.merge() Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   var first = [ "a", "b", "c" ,"d"];
+	   var second = [ "d", "e", "f" ];
+       var result = jQuery.merge( first, second);
+
+       console.log("result: " + result.join(","));
+   });
+</script>
+</head>
+<body>
+</body>
+</html>

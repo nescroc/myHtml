@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.data() Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+       $("span").css("font-size", "30px");
+       
+	   var div = $( "div" )[ 0 ];
+	   jQuery.data( div, "sample", {
+	     firstValue: 16,
+	     lastValue: "pizza!"
+	   });
+	   $( "span:first" ).text( jQuery.data( div, "sample" ).firstValue );
+	   $( "span:last" ).text( jQuery.data( div, "sample" ).lastValue );
+   });
+</script>
+</head>
+<body>
+<div>
+  저장된 값은
+  <span></span>
+  그리고
+  <span></span>
+</div>
+</body>
+</html>

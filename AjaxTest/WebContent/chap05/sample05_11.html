@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$("prev ~ siblings") 선택자 실습</title>
+<style>
+  div, span {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background: #bfa;
+    float: left;
+    font-size: 14px;
+  }
+
+  div#small {
+    width: 60px;
+    height: 25px;
+    font-size: 12px;
+    background: #fab;
+  }
+  </style>
+
+
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "#prev ~ div" ).css( "border", "3px groove blue" );
+   });
+</script>
+</head>
+<body>
+<div>div 아이템 1</div>
+<span id="prev">span 아이템 1</span>
+<div>div 아이템 2</div>
+<div>div 아이템 3<div id="small">중첩 div아이템 1</div></div>
+<span>span 아이템 2</span>
+<div>div 아이템 4</div>
+</body>
+</html>

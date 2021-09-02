@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.select() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$( ":input" ).select(function() {
+			  $( "div" ).text( ".... selected" ).show().fadeOut( 2000 );
+			});
+
+	});
+</script>
+</head>
+<body>
+  <p>
+      select 이벤트 실습  
+  </p>
+  <input type="text" value="아이템1 아이템2" />
+  <input type="text" value="" />
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.unwrap() Traverse 메서드</title>
+<style>
+  div {
+    border: 2px solid blue;
+  }
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $("button").on("click",function(){
+		   if ($( "p" ).parent().is( "div" ) ) {
+			   $( "p" ).unwrap();
+			  } else {
+				  $( "p" ).wrap( "<div></div>" );
+			  }
+	   });
+   });
+
+</script>
+</head>
+<body>
+<h2>영웅들</h2>
+<button>wrap/unwrap</button>
+<div class="container">
+  <p>이순신</p>
+  <p>강감찬</p>
+</div>
+</body>
+</html>

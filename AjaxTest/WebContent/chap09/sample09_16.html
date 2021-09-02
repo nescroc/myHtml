@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.type(obj) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	       
+	       console.log("jQuery.type( undefined)결과: "+jQuery.type( undefined) ); 
+	       console.log("jQuery.type()결과: "+jQuery.type() );
+	       console.log("jQuery.type( null )결과: "+jQuery.type( null ) );
+	       console.log("jQuery.type( true )결과: "+jQuery.type( true ) );
+	       console.log("jQuery.type( new Boolean() )결과: "+jQuery.type( new Boolean()) );
+	       console.log("jQuery.type( 30 )결과: "+jQuery.type( 30 ));
+	       console.log("jQuery.type( new Number(3) )결과: "+jQuery.type( new Number(3)) );
+	       console.log("jQuery.type( 'hello' )결과: "+jQuery.type( "hello" ) );
+	       console.log("jQuery.type( new String('hello') )결과: "+jQuery.type( new String("hello") ) );
+	       console.log("jQuery.type( function(){} )결과: "+jQuery.type( function(){} ));
+	       console.log("jQuery.type( [] )결과: "+jQuery.type( [] ) );
+	       console.log("jQuery.type( new Array() )결과: "+jQuery.type( new Array() ) );
+	       console.log("jQuery.type( new Date() )결과: "+jQuery.type( new Date() ) );
+	       console.log("jQuery.type( /hello/ )결과: "+jQuery.type( /hello/ ));
+
+   });
+</script>
+</head>
+<body>
+</body>
+</html>

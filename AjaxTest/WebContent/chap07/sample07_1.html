@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.attr() Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	  
+	   $("button").on("click", function(){
+		  $("img").attr({
+			  src:"korea.png",
+			  width:200,
+			  height:200
+		  });
+		   console.log( $("img").attr("src"));
+	   });
+   });
+
+</script>
+</head>
+<body>
+<img src="france.png" width="100" height="100" />
+<button>이미지 변경</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.submit() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$( "#target" ).submit(function( event ) {
+			 
+			var mesg="실패"
+			 if($(":text").val()=='OK'){
+			   	 mesg="성공";
+			 }
+			 $("div").text(mesg);
+			  event.preventDefault();
+			});
+
+	});
+</script>
+</head>
+<body>
+OK입력하면 '성공' 출력하고 아니면 '실패'출력
+<form id="target" >
+  <input type="text" value="">
+  <input type="submit" value="Go">
+</form>
+<div></div>
+</body>
+</html>

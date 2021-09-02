@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$(“selector[attr1=‘value1’][attrN=‘valueN’]") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "input[id][name$='man']" ).val( "man 글자 포함" );
+	   $( "input[value |='en']" ).css("border" , " 3px dotted red");
+   });
+</script>
+</head>
+<body>
+<input id="man-news" name="man-news" value="en">
+<input name="milkman" value="kr">
+<input id="letterman" name="new-letterman" >
+<input name="newmilk" value="en-UK">
+</body>
+</html>

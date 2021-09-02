@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.makeArray(obj) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   var arr = jQuery.makeArray( $("div") );
+	   jQuery.each(arr,function(idx,obj){
+		  console.log( "index: "+idx+"\t"+ $(this).text());
+	   });
+   });
+</script>
+</head>
+<body>
+<div>First</div>
+<div>Second</div>
+<div>Third</div>
+<div>Fourth</div>
+</body>
+</html>

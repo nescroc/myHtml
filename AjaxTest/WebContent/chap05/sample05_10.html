@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$("prev + next") 선택자 실습</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "label + input" ).css( "color", "blue" ).val( "Labeled!" );
+   });
+</script>
+</head>
+<body>
+<form>
+  <label for="name">Name:</label>
+  <input name="name" id="name">
+  <fieldset>
+    <label for="newsletter">Newsletter:</label>
+    <input name="newsletter" id="newsletter">
+  </fieldset>
+</form>
+<input name="none">
+</body>
+</html>

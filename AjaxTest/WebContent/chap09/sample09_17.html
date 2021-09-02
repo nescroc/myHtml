@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.uniqueSort(domArray) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	       
+
+	   var lis = $( "li" ).get();
+	   lis = lis.concat( $( "li" ).get() );
+	   console.log("중복된 값 길이: " + lis.length);
+	   var lis1 = jQuery.uniqueSort( lis );
+	   console.log("중복제거된 값 길이: " + lis1.length);
+	   
+   });
+</script>
+</head>
+<body>
+<ul>
+  <li>A</li>
+  <li>B</li>
+  <li>C</li>
+  <li>D</li>
+  <li>E</li>
+</ul>
+</body>
+</html>

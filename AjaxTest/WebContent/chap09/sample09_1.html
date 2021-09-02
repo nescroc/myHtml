@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.each(Object,function) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   var arr = [ "one", "two", "three", "four", "five" ];
+	   jQuery.each(arr,function(idx,obj){
+		   console.log("index:"+idx+"\t value: " + obj); 
+	   });
+	   
+	   var m = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+	   jQuery.each(m ,function(key,obj){
+		   console.log("key:"+key+"\t value: " + obj); 
+	   });
+   });
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.hover() 메서드</title>
+<style>
+ span {
+    color: red;
+  }
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$( "li" ).hover(
+				  function() {
+				    $( this ).append( $( "<span> ***</span>" ) );
+				  }, function() {
+				    $( this ).find( "span" ).remove();
+				  }
+				);
+	});
+</script>
+</head>
+<body>
+<ul>
+  <li>홍길동</li>
+  <li>이순신</li>
+  <li class="fade">유관순</li>
+  <li class="fade">강감찬</li>
+</ul>
+</body>
+</html>

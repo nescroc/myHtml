@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery.parseJSON(json) Traverse 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+
+	   var jsonString = '{"name":"홍길동","age":20,"address":"서울"}';
+	   var jsonObject = jQuery.parseJSON( jsonString );
+	   var name = jsonObject.name;
+	   var age = jsonObject.age;
+	   var address = jsonObject.address;
+	   $( "#someElement" ).append(name +"\t"+ age +"\t" + address);
+
+   });
+</script>
+</head>
+<body>
+<p id="someElement"></p>
+</body>
+</html>

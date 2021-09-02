@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>querySelector()와 querySelectorAll()</title>
+
+</head>
+<body>
+
+  <h1 id="header1">header1입니다.</h1>
+  <h1 id="header2">header2입니다.</h1>
+  
+  <script type="text/javascript">
+
+  var h = document.querySelector("#header1");
+  console.log( h.innerHTML);
+
+  var headers = document.querySelectorAll("h1");
+  
+  for(var i=0 ; i < headers.length; i++ ){
+ 	 console.log(i +"> "+ headers[i].innerHTML);
+  }
+
+</script>
+</body>
+</html>

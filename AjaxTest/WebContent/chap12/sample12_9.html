@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.serialize() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	  $("form").on("submit" , function(){
+		  console.log( $(this).serialize());
+		  return false;
+	  });
+});
+
+</script>
+</head>
+<body>
+<form>
+  <input type="text" name="a" value="1" id="a" />
+  <input type="text" name="b" value="2" id="b" />
+  <input type="hidden" name="c" value="3" id="c" />
+  <input type="submit" value="전송">
+</form>
+</body>
+</html>

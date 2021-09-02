@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.keydown() 메서드</title>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$( "#target" ).keydown(function(event) {
+		   $("div").text(event.keyCode);	
+		});
+
+	});
+</script>
+</head>
+<body>
+<form>
+  <input id="target" type="text" value="">
+</form>
+<div>
+</div>
+</body>
+</html>

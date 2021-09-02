@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.queue() 메서드</title>
+<style>
+div {
+	background-color: #bca;
+	width: 100px;
+	border: 1px solid green;
+}
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   
+	$(document).ready(function() {
+		$("#go").click(function() {
+			$("#block").animate({
+				width : "50%",
+				opacity : 0.4,
+			}, 500 , function(){
+				console.log($("div").queue("fx").length);
+			}).animate({
+				marginLeft : "0.6in",
+				fontSize : "3em",
+			}, 500, function(){
+				console.log($("div").queue("fx").length);
+			}).animate({
+				borderWidth : "10px"
+			}, 500,function(){
+				console.log($("div").queue("fx").length);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="go">Run</button>
+	<div id="block">Hello!</div>
+</body>
+</html>

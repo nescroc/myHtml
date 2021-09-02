@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:parent Filter Selector</title>
+<style>
+  td {
+    width: 40px;
+  }
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+   $(document).ready(function(){
+	   $( "td:parent" ).css("background-color","green");
+   });
+</script>
+</head>
+<body>
+<table border="1">
+  <tr><td>Value 1</td><td></td></tr>
+  <tr><td>Value 2</td><td></td></tr>
+</table>
+</body>
+</html>

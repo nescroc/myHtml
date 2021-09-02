@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.click() 메서드</title>
+<style>
+  p:hover {
+    background: yellow;
+  }
+  </style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$( "p" ).click(function() {
+			  $( this ).slideUp();
+		});
+	});
+</script>
+</head>
+<body>
+<p>홍길동</p>
+<p>이순신</p>
+<p>유관순</p>
+</body>
+</html>
