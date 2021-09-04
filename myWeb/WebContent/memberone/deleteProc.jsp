@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="memberone.*" %>
-<jsp:useBean id="dao" class="memberone.StudentDAO"/>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원탈퇴</title>
 </head>
-<%
+<%	StudentDAO dao = StudentDAO.getInstance();
 	String id = (String)session.getAttribute("loginID");
 	String pass = request.getParameter("pass");
 	int check = dao.deleteMember(id, pass);

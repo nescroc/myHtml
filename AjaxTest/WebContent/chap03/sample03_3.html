@@ -5,13 +5,13 @@
 <title>Ajax 실습</title>
 <script type="text/javascript">
    var xhttp;
-   function createHttpRequest() {
+   function createHttpRequest1() {
 		xhttp = new XMLHttpRequest();
    }
 
 	function mySend() {
 		
-		createHttpRequest();
+		createHttpRequest1();
 		xhttp.onreadystatechange = callFunction;
 		xhttp.open("GET", "json.json", true);
 		xhttp.send(null);
