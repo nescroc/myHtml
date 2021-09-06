@@ -31,7 +31,7 @@ try{
 		<input type="hidden" name="ref" value="<%=ref%>"/>
 		<input type="hidden" name="step" value="<%=step%>"/>
 		<input type="hidden" name="depth" value="<%=depth%>"/>
-		<table width="400" border="1" cellpadding="0" cellspacing="0"
+		<table width="500" border="1" cellpadding="0" cellspacing="0"
 			align="center" bgcolor="<%=bodyback_c%>">
 			<tr>
 				<td align="right" colspan="2" bgcolor="<%=value_c%>"><a

@@ -182,7 +182,6 @@ public class BoardDAO {
 		ResultSet rs=  null;
 		BoardVO article = null;
 		try {
-			increaseReadcount(num);
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement(
 					"select * from board where num = ?");
@@ -226,4 +225,91 @@ public class BoardDAO {
 		if (pstmt!=null)pstmt.close();
 		if (conn!=null)conn.close();
 	}
+	
+	public int updateArticle(BoardVO article) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String strQuery = "";
+		String dbPass = "";
+		int result = -1;
+		try {
+		
+			dbPass = getdbPass(article.getNum());		
+			
+			if(article.getPass().equals(dbPass)) {
+				strQuery="update board set writer=?,email=?,subject=?,content=?, where num=?";
+				conn = ConnUtil.getConnection();
+				pstmt = conn.prepareStatement(strQuery);
+				pstmt.setString(1, article.getWriter());
+				pstmt.setString(2, article.getEmail());
+				pstmt.setString(3, article.getSubject());
+				pstmt.setString(4, article.getContent());
+				pstmt.executeUpdate();
+				result=1;
+			}else {
+				result=0;
+			}
+		
+		}catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}finally {
+			if(pstmt!=null)try {pstmt.close();}catch(SQLException sqle) {}
+			if(conn	!=null)try {conn.close();}catch(SQLException sqle) {}
+		}
+		
+		
+		return result;
+	}
+	
+	public String getdbPass(int num)throws SQLException {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs=  null;
+		
+		String dbPass ="";
+		String strQuery = "select pass from board where num = ?";
+		
+		conn = ConnUtil.getConnection();
+		pstmt = conn.prepareStatement(strQuery);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			dbPass = rs.getString("pass");			
+		}
+		
+		if(rs!=null)rs.close();
+		if(pstmt!=null)pstmt.close();
+		if(conn!=null)conn.close();
+		
+		return dbPass;		
+	}
+	
+	public int deleteArticle(int num,String pass) {
+		int result = -1;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String dbPass = "";
+		try {
+			dbPass = getdbPass(num);
+			if(dbPass.equals(pass)) {
+				  conn = ConnUtil.getConnection(); 
+				  pstmt = conn.prepareStatement("delete from board where num = ?");
+				  pstmt.setInt(1, num);
+				  pstmt.executeUpdate();
+				  result = 1; //성공
+			}else {
+				result = 0;
+			}
+		}catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}finally {
+			if(pstmt!=null)try {pstmt.close();}catch(SQLException sqle) {}
+			if(conn	!=null)try {conn.close();}catch(SQLException sqle) {}
+		}		
+		return result;
+	}
+
 }

@@ -16,6 +16,7 @@
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 	try{
 		BoardDAO dbPro = BoardDAO.getInstance();
+		dbPro.increaseReadcount(num);
 		BoardVO article = dbPro.getArticle(num);
 		int ref = article.getRef();
 		int step= article.getStep();
