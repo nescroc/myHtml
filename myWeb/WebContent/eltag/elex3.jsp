@@ -13,7 +13,7 @@
 	<tr> <td><b>표현식</b> </td><td><b>값</b></td> </tr>
 	<tr> <td><b>\${2 + 5 }</b> </td><td><b>${2 + 5 }</b></td> </tr>
 	<tr> <td><b>\${5/6}</b> </td><td><b>${5/6}</b></td> </tr>
-	<tr> <td><b>\${5 div 6 }</b> </td><td><b>${ 5 div 6 }</b></td> </tr>
+	<%-- <tr> <td><b>\${5 div 6 }</b> </td><td><b>${ 5 div 6 }</b></td> </tr> --%>
 	<tr> <td><b>\${4 mod 5 }</b> </td><td><b>${4 mod 5}</b></td> </tr>
 	<tr> <td><b>\${2 < 3 }</b> </td><td><b>${2 < 3}</b></td> </tr>
 	<tr> <td><b>\${2 gt 3 }</b> </td><td><b>${2 gt 3}</b></td> </tr>
