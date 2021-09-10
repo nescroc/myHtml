@@ -136,7 +136,7 @@ public class BoardDAO {
 		return x;
 	}
 	
-	public List<BoardVO> getArticles(/*수정<1>*/){
+	public List<BoardVO> getArticles(int start, int end){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -144,11 +144,18 @@ public class BoardDAO {
 		try {
 			conn = ConnUtil.getConnection();
 			/* <수정2> */
-			pstmt = conn.prepareStatement(
-					"select * from board order by num desc");//수정 <3>
+			pstmt = conn.prepareStatement("select * from "
+					+ "(select rownum rnum, num, writer,"
+					+ " email, subject, pass, regdate, "
+					+ "readcount, ref, step, depth, content,"
+					+ " ip from (select * from board order by ref desc,"
+					+ " step asc)) where rnum>=? and rnum<=?");
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			//수정 <3>
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				articleList = new ArrayList<>();
+				articleList = new ArrayList<BoardVO>(end-start+1);
 				do {
 					BoardVO article = new BoardVO();
 					article.setNum(rs.getInt("num"));
@@ -238,13 +245,14 @@ public class BoardDAO {
 			dbPass = getdbPass(article.getNum());		
 			
 			if(article.getPass().equals(dbPass)) {
-				strQuery="update board set writer=?,email=?,subject=?,content=?, where num=?";
+				strQuery="update board set writer=?,email=?,subject=?,content=? where num=?";
 				conn = ConnUtil.getConnection();
 				pstmt = conn.prepareStatement(strQuery);
 				pstmt.setString(1, article.getWriter());
 				pstmt.setString(2, article.getEmail());
 				pstmt.setString(3, article.getSubject());
 				pstmt.setString(4, article.getContent());
+				pstmt.setInt(5, article.getNum());
 				pstmt.executeUpdate();
 				result=1;
 			}else {
