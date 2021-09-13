@@ -10,9 +10,11 @@ import mvcmem.control.ActionFoward;
 public class IndexAction implements Action {
 
 	@Override
-	public ActionFoward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public ActionFoward execute(
+			HttpServletRequest request, HttpServletResponse response) 
+					throws IOException {
 		System.out.println("IndexAction의 execute() 수행됨");
-		return new ActionFoward("index.jsp",false);
+		return new ActionFoward("/mvcmem/index.jsp",false);
 	}
 
 }

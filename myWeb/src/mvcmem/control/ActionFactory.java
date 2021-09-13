@@ -1,7 +1,18 @@
 package mvcmem.control;
 
 import mvcmem.action.Action;
+import mvcmem.action.DeleteFormAction;
+import mvcmem.action.DeleteProcAction;
+import mvcmem.action.IdCheckAction;
 import mvcmem.action.IndexAction;
+import mvcmem.action.LoginFormAction;
+import mvcmem.action.LoginProcAction;
+import mvcmem.action.LogoutAction;
+import mvcmem.action.ModifyFormAction;
+import mvcmem.action.ModifyProcAction;
+import mvcmem.action.RegFormAction;
+import mvcmem.action.RegProcAction;
+import mvcmem.action.ZipCheckAction;
 
 public class ActionFactory {
 
@@ -25,39 +36,39 @@ public class ActionFactory {
 			break;
 
 		case "login":
-			// action = new LoginAction();
+			 action = new LoginFormAction();
 			break;
 
 		case "loginProc":
-			// action = new LoginProcAction();
+			 action = new LoginProcAction();
 			break;
 
 		case "logout":
-			// action = new LogoutAction();
+			 action = new LogoutAction();
 			break;
 		case "regForm":
-//			action = new RegFormAction();
+			action = new RegFormAction();
 			break;
 		case "regProc":
-			// action = new RegProcAction();
+			 action = new RegProcAction();
 			break;
 		case "modifyForm":
-			// action = new ModifyFormAction();
+			 action = new ModifyFormAction();
 			break;
 		case "modifyProc":
-			// action = new ModifyProcAction();
+			 action = new ModifyProcAction();
 			break;
 		case "deleteForm":
-			// action = new DeleteFormAction();
+			 action = new DeleteFormAction();
 			break;
 		case "deleteProc":
-			// action = new DeleteProcAction();
+			 action = new DeleteProcAction();
 			break;
 		case "idCheck":
-			// action = new IdCheckAction();
+			 action = new IdCheckAction();
 			break;
 		case "zipCheck":
-			// action = new ZipCheckAction();
+			 action = new ZipCheckAction();
 			break;
 		default:
 			action = new IndexAction();

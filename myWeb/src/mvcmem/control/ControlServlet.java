@@ -17,7 +17,7 @@ public class ControlServlet extends HttpServlet {
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("text/html;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		String cmd = request.getParameter("cmd");
 		if (cmd != null) {
 			ActionFactory factory = ActionFactory.getInstance();
