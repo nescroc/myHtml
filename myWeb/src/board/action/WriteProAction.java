@@ -25,7 +25,8 @@ public class WriteProAction implements CommandAction {
 		article.setRef(Integer.parseInt(request.getParameter("ref")));
 		article.setStep(Integer.parseInt(request.getParameter("step")));
 		article.setDepth(Integer.parseInt(request.getParameter("depth")));
-		article.setContent(request.getRemoteAddr());
+		article.setIp(request.getRemoteAddr());
+		article.setContent(request.getParameter("content"));
 		BoardDAO dbpro = BoardDAO.getInstance();
 		dbpro.insertArticle(article);
 		return "/board/writePro.jsp";

@@ -13,7 +13,7 @@
 <body bgcolor="${bodyback_c }">
 <div align="center">
 	<b>글 수정</b><br>
-	<form method="post" name="writeForm" action="/myWeb/board/updatePro.do?pageNum${pageNum}" onsubmit="return writeSave()">
+	<form method="post" name="writeForm" action="/myWeb/board/updatePro.do?pageNum=${pageNum}" onsubmit="return writeSave()">
 		<table width="400" border="1" cellspacing="0" cellpadding="0" align="center">
 			<tr>
 				<td width="70" bgcolor="${value_c }" align="center">이름</td>

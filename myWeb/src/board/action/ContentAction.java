@@ -25,7 +25,7 @@ public class ContentAction implements CommandAction {
 		request.setAttribute("pageNum", Integer.valueOf(pageNum));
 		request.setAttribute("article", article);
 
-		return "/board/content.jsp/";//해당뷰
+		return "/board/content.jsp";//해당뷰
 	}
 
 }

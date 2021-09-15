@@ -21,6 +21,6 @@ public class UpdateFormAction implements CommandAction {
 				//해당 뷰에서 사용할 속성
 		request.setAttribute("pageNum", Integer.valueOf(pageNum));
 		request.setAttribute("article", article);
-		return "/board/udpateForm.jsp";
+		return "/board/updateForm.jsp";
 	}
 }

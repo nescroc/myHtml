@@ -51,7 +51,7 @@
 	 				<img src="images/level.gif" width="${5*article.depth }" height="16">
 	 			</c:if>
 	 			<a href="/myWeb/board/content.do?num=${article.num }&pageNum=${currentPage}">${article.subject }</a>
-	 			<c:if test="${article.readCount>=10 }">
+	 			<c:if test="${article.readcount>=10 }">
 	 				<img src="images/hot.gif" border="0" height="16">
 	 			</c:if>
 	 		</td>
@@ -68,11 +68,11 @@
 	 <c:if test="${count>0 }">
 	 	<c:set var="imsi" value="${count%pageSize==0?0:1 }"/>
 	 	<c:set var="pageCount" value="${count/pageSize+imsi }"/>
-	 	<c:set var="pageBlock" value="${3 }"/>
+	 	<c:set var="pageBlock" value="${3}"/>
 	 	<fmt:parseNumber var="result" value="${(currentPage-1)/pageBlock }" integerOnly="true"/>
 	 	<c:set var="startPage" value="${result*pageBlock+1 }"/>
 	 	<c:set var="endPage" value="${startPage+pageBlock-1 }"/>
-	 	<c:if test="${endPage>pageCOunt }">
+	 	<c:if test="${endPage>pageCount }">
 	 		<c:set var="endPage" value="${pageCount }"/>
 	 	</c:if>
 	 	<c:if test="${startPage>pageBlock }">

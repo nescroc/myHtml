@@ -261,6 +261,7 @@ public class BoardDAO {
 	}
 	
 	public String getArticlePass(int num) {
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -281,5 +282,31 @@ public class BoardDAO {
 			if(conn!=null)try {conn.close();}catch(SQLException sqle) {}
 		}
 		return dbArticlePass;
+	}
+
+	public int deleteArticle(int num,String pass) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;		
+		String dbPass="";		
+		int result = -1;
+		
+		try {
+			dbPass = getArticlePass(num);
+			if(dbPass.equals(pass)) {
+				conn = ConnUtil.getConnection();				
+				pstmt = conn.prepareStatement("delete from board where num=?");
+				pstmt.setInt(1, num);
+				pstmt.executeUpdate();
+				result = 1;//글삭제 성공
+			}else {
+				result = 0; // 비밀번호 틀림
+			}
+		}catch(SQLException sqle) {
+			sqle.printStackTrace();
+		}finally {			
+			if(pstmt!=null)try {pstmt.close();}catch(SQLException sqle) {}
+			if(conn!=null)try {conn.close();}catch(SQLException sqle) {}
+		}		
+		return result;
 	}
 }

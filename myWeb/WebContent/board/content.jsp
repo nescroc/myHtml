@@ -39,7 +39,7 @@
 				</tr>
 				<tr height="30">
 					<td colspan="4" bgcolor="${value_c }" align="center">
-						<input type="button" value="글수정" onclick="document.location.href='/myWeb/board/updateForm.do?${article.num}&pageNum=${pageNum}'">
+						<input type="button" value="글수정" onclick="document.location.href='/myWeb/board/updateForm.do?num=${article.num}&pageNum=${pageNum}'">
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="button" value="글삭제" onclick="document.location.href='/myWeb/board/deleteForm.do?num=${article.num}&pageNum=${pageNum}'">
 						&nbsp;&nbsp;&nbsp;&nbsp;

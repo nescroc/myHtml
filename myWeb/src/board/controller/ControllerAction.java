@@ -29,6 +29,7 @@ public class ControllerAction extends HttpServlet {
 	
 	@Override
 	public void init(ServletConfig config) throws ServletException {
+		
 		String props = config.getInitParameter("propertyConfig");
 		//명령어와 처리클래스의 매핑정보를 저장할 properties객체 생성
 		Properties pr = new Properties();
