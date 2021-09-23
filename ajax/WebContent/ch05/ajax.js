@@ -46,8 +46,12 @@ ajax.xhr.Request.prototype ={
 		this.req.setRequestHeader('Content-Type','application/x-www-urlencoded');
 		var request = this;
 		this.req.onreadystatechange =function(){
-			request.onreadystatechange.call(request);
+			request.onStatechange.call(request);
 		}
 		this.req.send(httpMethod=='POST'?httpParams:null);
+	},
+	
+	onStateChange: function(){
+		this.callback(this.req);
 	}
 }

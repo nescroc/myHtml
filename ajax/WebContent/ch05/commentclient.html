@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>댓글 게시판</title>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	loadCommentList();
+}
+function loadCommentList(){
+	new ajax.xhr.Request("commentlist.jsp","",loadCommentResult,'GET');	
+}
+function loadCommentResult(req){
+	if(req.readyState==4){
+		if(req.status==200){
+			var xmlDoc = req.responseXML;
+			xmlDoc.async = "false";
+			xmlDoc.loadXML(req.responseText);
+			xmlDoc = xmlDoc.documentElement;
+			var code = xmlDoc.getElementsByTagName('code').item(0).firstChild.nodeValue;
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
