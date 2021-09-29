@@ -8,6 +8,12 @@
 <script type="text/javascript">
 window.onload = function(){
 	new ajax.xhr.Request("commentlist.jsp","",loadCommentResult,'GET');
+	}
+window.onload = function(){
+	loadCommentList();
+}
+function loadCommentList(){
+	new ajax.xhr.Request("commentlist.jsp","",loadCommentResult,'GET');
 }
 function loadCommentResult(req){
 	if(req.readyState==4){
@@ -170,6 +176,11 @@ function removeResult(req){
 			}
 		}else{
 			alert("서버 에러 발생 : "+req.status);
+			}
+			xmlDoc.loadXML(req.responseText);
+			xmlDoc = xmlDoc.documentElement;
+			var code = xmlDoc.getElementsByTagName('code').item(0).firstChild.nodeValue;
+
 		}
 	}
 }
@@ -194,5 +205,8 @@ function removeResult(req){
 	</form>
 </div>
 <div id="debugConsole" style="border:1px solid #000"></div>
+=======
+
+>>>>>>> cae7eb1d59a27d1ed84528c32b626afa54159f44
 </body>
 </html>
