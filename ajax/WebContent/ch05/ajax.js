@@ -50,8 +50,8 @@ ajax.xhr.Request.prototype ={
 		}
 		this.req.send(httpMethod=='POST'?httpParams:null);
 	},
-	
-	onStateChange: function(){
+
+	onStateChange:function(){
 		this.callback(this.req);
 	}
 }
